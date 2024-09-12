@@ -6,6 +6,7 @@ provider "registry.opentofu.org/taliesins/hyperv" {
   constraints = "~> 1.0"
   hashes = [
     "h1:W5cOGhAHbC/DjggFVAkt1MlkKUlYs0iFdcdVXKqPZGI=",
+    "h1:hivsU1Xo1nRTP+6hTLOoZFejh71KbEuUhaio9Oj7uBo=",
     "zh:3fa1b4fc19723c19e0c2077fd8951a9f6568167bae3c44279f09de72f34c9935",
     "zh:47d693fc587117a36c00ef3a47fb8284ddc036b2556c5e81466274fdd89d5d16",
     "zh:a928fa6c3c4f12ae0a355673a433159ab15f42f4152c15d1e13b8e86892d85f7",

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-ingress
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  # ingress:
+  # - from:
+  # #   - ipBlock:
+  # #       cidr: 10.42.0.0/16 # pod network kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
+  #   # - ipBlock:
+  #   #     cidr: 10.1.0.0/16 # pod network kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
+  #   # - ipBlock:
+  #   #     cidr: 172.21.176.1/32 # wsl network
+  #   - podSelector: {}
+  #     namespaceSelector: {}
+    # - ipBlock:
+    #     cidr: 10.0.0.1/32 # wsl network
+    # - ipBlock:
+    #     cidr: 10.1.0.1/32 # podman network ip forward masquerade

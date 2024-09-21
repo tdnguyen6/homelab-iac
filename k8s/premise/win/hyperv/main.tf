@@ -24,8 +24,9 @@ resource "hyperv_machine_instance" "masterVMs" {
   name                   = "master${count.index}"
   generation             = 2
   dynamic_memory         = true
-  memory_minimum_bytes   = 1.75 * pow(1024, 3)
-  memory_startup_bytes   = 1.75 * pow(1024, 3)
+  memory_minimum_bytes   = 2 * pow(1024, 3)
+  memory_maximum_bytes   = 2 * pow(1024, 3)
+  memory_startup_bytes   = 2 * pow(1024, 3)
   processor_count        = 2
   wait_for_state_timeout = 10
   wait_for_ips_timeout   = 10
@@ -35,13 +36,13 @@ resource "hyperv_machine_instance" "masterVMs" {
   }
 
   network_adaptors {
-    name         = "eth0"
+    name         = "Ethernet"
     switch_name  = "Default Switch"
     wait_for_ips = false
   }
 
   network_adaptors {
-    name         = "eth1"
+    name         = "VNet"
     switch_name  = hyperv_network_switch.hyperv.name
     wait_for_ips = false
   }
@@ -74,6 +75,7 @@ resource "hyperv_machine_instance" "workerVMs" {
   generation             = 2
   dynamic_memory         = true
   memory_minimum_bytes   = pow(1024, 3)
+  memory_maximum_bytes   = pow(1024, 3)
   memory_startup_bytes   = pow(1024, 3)
   processor_count        = 1
   wait_for_state_timeout = 10
